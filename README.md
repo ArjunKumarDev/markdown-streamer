@@ -11,6 +11,11 @@ This is a **Next.js 15 App Router** project that streams a Markdown file line-by
 
 ---
 
+## Environment
+
+Framework : Next.js 15
+Node.js version : 20.0.0
+
 ## 🧑‍💻 Getting Started
 
 ### 1. Clone the repository
