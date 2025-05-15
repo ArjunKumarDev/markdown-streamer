@@ -1,5 +1,7 @@
 # 📘 Markdown Streaming Viewer
 
+![Markdown App Preview](public/demo.png)
+
 This is a **Next.js 15 App Router** project that streams a Markdown file line-by-line from the server to the client using **Server-Sent Events (SSE)**.
 
 ## 🚀 Features
