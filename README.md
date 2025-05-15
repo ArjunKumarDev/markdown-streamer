@@ -38,7 +38,7 @@ yarn dev
 
 Open http://localhost:3000/stream in your browser.
 
-FIle Structure
+### FIle Structure
 
 /app
 ├── /api/event-stream/route.ts # SSE API route
