@@ -7,6 +7,7 @@ import remarkGfm from "remark-gfm";
 export default function StreamPage() {
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(true);
+  const [isAutoScroll, setIsAutoScroll] = useState(true);
 
   useEffect(() => {
     const eventSource = new EventSource("/api/event-stream");
@@ -34,8 +35,34 @@ export default function StreamPage() {
     };
   }, []);
 
+  useEffect(() => {
+    const el = document.getElementById("scroll-container");
+    if (!el) return;
+    console.log(el, "element");
+
+    const handleScroll = () => {
+      const isAtBottom =
+        Math.abs(el.scrollHeight - el.scrollTop - el.clientHeight) < 10;
+      console.log(isAtBottom, "isAtBottom");
+      setIsAutoScroll(isAtBottom);
+    };
+
+    el.addEventListener("scroll", handleScroll);
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const el = document.getElementById("scroll-container");
+    if (!el || !isAutoScroll) return;
+
+    el.scrollTop = el.scrollHeight;
+  }, [content, isAutoScroll]);
+
   return (
-    <div className="max-w-3xl mx-auto p-4">
+    <div
+      className="max-w-3xl mx-auto p-4 overflow-y-auto"
+      id="scroll-container"
+    >
       <h1 className="text-center font-bold">Markdown Streaming Viewer</h1>
       {loading && (
         <p className="text-2xl text-green-600 mb-4">Streaming markdown...</p>

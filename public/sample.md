@@ -71,6 +71,14 @@ _Italic_
 
 ---
 
+| ID  | Name        | Email               | Status   | Join Date  |
+| --- | ----------- | ------------------- | -------- | ---------- |
+| 1   | Alice Smith | alice@example.com   | Active   | 2023-08-12 |
+| 2   | Bob Johnson | bob@example.com     | Pending  | 2023-09-05 |
+| 3   | Charlie Lee | charlie@example.com | Inactive | 2023-07-20 |
+| 4   | Dana Moore  | dana@example.com    | Active   | 2023-10-02 |
+| 5   | Evan Taylor | evan@example.com    | Pending  | 2023-06-18 |
+
 ## 📦 Code Blocks
 
 ### Inline Code
